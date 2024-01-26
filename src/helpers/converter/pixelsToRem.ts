@@ -1,0 +1,1 @@
+export const pixelsToRem = (pixels: number) : number => pixels / 16

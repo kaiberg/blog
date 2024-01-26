@@ -1,12 +1,6 @@
 import Image from "next/image";
 import * as stylex from "@stylexjs/stylex"
-
-const styles = stylex.create({
-    base: {
-        fontSize: '1rem',
-        color: 'seagreen'
-    }
-})
+import {colorsStylex} from "../ui/tokens/colors.stylex"
 
 export default function Home() {
   return (
@@ -20,3 +14,11 @@ export default function Home() {
     </main>
   );
 }
+
+const styles = stylex.create({
+    base: {
+        fontSize: '1rem',
+        color: colorsStylex.primary,
+        background: colorsStylex.background
+    }
+})
