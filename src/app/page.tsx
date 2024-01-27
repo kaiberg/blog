@@ -1,6 +1,6 @@
 import Image from "next/image";
 import * as stylex from "@stylexjs/stylex"
-import {colorsStylex} from "../ui/tokens/colors.stylex"
+import {media, PHONE} from "../ui/tokens/device.breakpoints.stylex"
 
 export default function Home() {
   return (
@@ -17,8 +17,6 @@ export default function Home() {
 
 const styles = stylex.create({
     base: {
-        fontSize: '1rem',
-        color: colorsStylex.primary,
-        background: colorsStylex.background
+        background: {default: 'red', [PHONE]: 'green'}
     }
 })

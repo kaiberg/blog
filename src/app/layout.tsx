@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
-import "./globals.css";
+import "./reset.css";
+import * as stylex from "@stylexjs/stylex"
+import {colors} from "../ui/tokens/colors.stylex"
+import maxWidthWrapper from "../ui/utilityClasses/maxWidthWrapper";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -12,8 +15,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body>{children}</body>
+    <html lang="en" {...stylex.props(rootStyles.theme, rootStyles.showcase)}>
+      <body {...stylex.props(maxWidthWrapper)}>{children}</body>
     </html>
   );
 }
+
+const rootStyles = stylex.create({
+  theme: {
+    background: colors.background,
+    color: colors.text
+  },
+  showcase: {
+    minHeight: '100dvh',
+    minWidth: '100dvw'
+  }
+})
