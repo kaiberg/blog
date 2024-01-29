@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import "./reset.css";
+import "./font.css"
 import * as stylex from "@stylexjs/stylex"
 import {colors} from "../ui/tokens/colors.stylex"
-import maxWidthWrapper from "../ui/utilityClasses/maxWidthWrapper";
+import Header from "@/app/Header";
+import Footer from "@/app/Footer";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,7 +18,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" {...stylex.props(rootStyles.theme, rootStyles.showcase)}>
-      <body {...stylex.props(maxWidthWrapper)}>{children}</body>
+      <body>
+        <Header/>
+        {children}
+        <Footer/>
+      </body>
     </html>
   );
 }

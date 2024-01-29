@@ -1,6 +1,5 @@
-import Image from "next/image";
 import * as stylex from "@stylexjs/stylex"
-import {media, PHONE} from "../ui/tokens/device.breakpoints.stylex"
+import {PHONE} from "../ui/tokens/device.breakpoints.stylex"
 
 export default function Home() {
   return (

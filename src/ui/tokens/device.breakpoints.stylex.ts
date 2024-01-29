@@ -10,15 +10,9 @@ const deviceBreakpointsStylex = {
 }
 
 const screenQuery = '@media only screen and'
-const widthQuery = (key: keyof typeof deviceBreakpointsStylex) => `(max-width: ${_hidden(deviceBreakpointsStylex[key])}rem)`
+const widthQuery = (key: keyof typeof deviceBreakpointsStylex) => `(min-width: ${_hidden(deviceBreakpointsStylex[key])}rem)`
 
-// export const PHONE = `${screenQuery} and ${widthQuery("--PHONE")}`
-export const PHONE = '@media only screen and (max-width: 31.25rem)'
-export const TABLET = '@media only screen and (max-width: 62.5rem)'
-export const LAPTOP = '@media only screen and (max-width: 93.75rem)'
-export const DESKTOP ='@media only screen and (max-width: 125rem)'
-
-export const media = {
-    DARK
-
-}
+export const PHONE = '@media only screen and (min-width: 31.25rem)'
+export const TABLET = '@media only screen and (min-width: 62.5rem)'
+export const LAPTOP = '@media only screen and (min-width: 93.75rem)'
+export const DESKTOP ='@media only screen and (min-width: 125rem)'
