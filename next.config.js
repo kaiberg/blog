@@ -144,7 +144,7 @@ module.exports = applylast(stylexPlugin({
         babelrc: false
     }
 })({
-    output: 'export',
+    // output: 'export',
     transpilePackages: ['@stylexjs/open-props'],
     staticPageGenerationTimeout: 300,
     trailingSlash: true,

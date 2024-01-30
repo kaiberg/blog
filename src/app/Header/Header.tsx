@@ -4,6 +4,7 @@ import Link from "next/link";
 import maxWidthWrapperStylex from "@/ui/utilityClasses/maxWidthWrapper";
 import {PHONE} from "../../ui/tokens/device.breakpoints.stylex";
 import Logo from "@/app/Logo";
+import DarkModeToggle from "@/app/DarkModeToggle";
 
 type HeaderProps = {}
 
@@ -19,6 +20,7 @@ function Header({}: HeaderProps) {
                 <Link href={'/projects'}>
                     Projects
                 </Link>
+                <DarkModeToggle/>
             </div>
             <div {...stylex.props(styles.mobileLinksWrapper)}>
 
