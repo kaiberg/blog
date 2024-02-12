@@ -1,10 +1,10 @@
 import * as stylex from "@stylexjs/stylex"
-import {colors} from "../../ui/tokens/colors.stylex";
+import {colors} from "../../tokens/colors.stylex";
 import Link from "next/link";
 import maxWidthWrapperStylex from "@/ui/utilityClasses/maxWidthWrapper";
-import {PHONE} from "../../ui/tokens/device.breakpoints.stylex";
-import Logo from "@/app/Logo";
-import DarkModeToggle from "@/app/DarkModeToggle";
+import {PHONE} from "../../tokens/device.breakpoints.stylex";
+import Logo from "../Logo";
+import DarkModeToggle from "../DarkModeToggle";
 
 type HeaderProps = {}
 

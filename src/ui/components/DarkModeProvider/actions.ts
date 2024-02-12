@@ -1,7 +1,7 @@
 'use server'
 
 import {cookies} from "next/headers";
-import {DarkModeVar, Themes} from "@/app/DarkModeProvider/DarkModeProvider";
+import {DarkModeVar, Themes} from "@/ui/components/DarkModeProvider/DarkModeProvider";
 
 const cookieName : DarkModeVar = 'color-mode'
 

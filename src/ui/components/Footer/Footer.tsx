@@ -1,8 +1,8 @@
 import * as stylex from "@stylexjs/stylex"
-import {colors} from "../../ui/tokens/colors.stylex";
+import {colors} from "../../tokens/colors.stylex";
 import Link from "next/link";
 import maxWidthWrapperStylex from "@/ui/utilityClasses/maxWidthWrapper";
-import Logo from "@/app/Logo";
+import Logo from "../Logo";
 
 type FooterProps = {}
 

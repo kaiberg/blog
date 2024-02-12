@@ -1,7 +1,7 @@
 'use client'
 
 import React from "react";
-import {SetDarkModeCookie} from "@/app/DarkModeProvider/actions";
+import {SetDarkModeCookie} from "@/ui/components/DarkModeProvider/actions";
 
 export type Themes = 'light' | 'dark'
 type DarkMode = {

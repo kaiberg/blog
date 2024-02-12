@@ -3,9 +3,9 @@ import "./reset.css";
 import "./font.css"
 import * as stylex from "@stylexjs/stylex"
 import {colors, darkMode, lightMode} from "../ui/tokens/colors.stylex"
-import Header from "@/app/Header";
-import Footer from "@/app/Footer";
-import DarkModeProvider from "@/app/DarkModeProvider";
+import Header from "../ui/components/Header";
+import Footer from "../ui/components/Footer";
+import DarkModeProvider from "../ui/components/DarkModeProvider";
 import {cookies} from "next/headers";
 
 export const metadata: Metadata = {
@@ -22,7 +22,7 @@ export default function RootLayout({
 
     return (
         <DarkModeProvider>
-            <html lang="en" {...stylex.props(rootStyles.showcase, rootStyles.theme, mode === 'dark' && darkMode, mode === 'light' && lightMode)}>
+            <html lang="en" {...stylex.props(rootStyles.showcase, rootStyles.theme, mode === 'dark' && darkMode, mode === 'light' && lightMode)} data-color-mode={mode}>
             <body>
                 <Header/>
                 {children}
@@ -36,7 +36,8 @@ export default function RootLayout({
 const rootStyles = stylex.create({
     theme: {
         background: colors.background,
-        color: colors.text
+        color: colors.text,
+        fontFamily: 'system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";'
     },
     showcase: {
         minHeight: '100dvh',

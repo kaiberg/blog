@@ -119,7 +119,7 @@ function applylast(nextConfig) {
 
 module.exports = applylast(stylexPlugin({
     aliases: {
-        '@/*': [path.join(__dirname, '*')],
+        '@/*': [path.join(__dirname, 'src', '*')],
     },
     rootDir: rootDir,
     useCSSLayers: false,
