@@ -3,7 +3,7 @@
 import {cookies} from "next/headers";
 import {DarkModeVar, Themes} from "@/ui/components/DarkModeProvider/DarkModeProvider";
 
-const cookieName : DarkModeVar = 'color-mode'
+const cookieName : DarkModeVar = 'data-color-mode'
 
 export async function SetDarkModeCookie(value: Themes){
     'use server'

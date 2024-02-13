@@ -3,37 +3,53 @@
 import React from "react";
 import {SetDarkModeCookie} from "@/ui/components/DarkModeProvider/actions";
 
-export type Themes = 'light' | 'dark'
+export type LightTheme = 'light';
+export type DarkTheme = 'dark';
+export type Themes = LightTheme | DarkTheme
+export const colorModes: {
+    [key: string]: Themes
+} = {
+    light: 'light',
+    dark: 'dark'
+}
+
 type DarkMode = {
     value: Themes | undefined,
     setValue: (value?: Themes) => void
 } | undefined
 
-export type DarkModeVar = 'color-mode'
-export const DarkModeVariableName : DarkModeVar = 'color-mode';
+export type DarkModeVar = 'data-color-mode'
+export const DarkModeVariableName : DarkModeVar = 'data-color-mode';
+
 export const DarkModeContext = React.createContext<DarkMode>(undefined);
 
 type ProviderProps = { children: React.ReactNode }
+
+const { dark, light } = colorModes;
+
 function DarkModeProvider({children}: ProviderProps) {
     const [darkMode, setRawDarkMode] = React.useState<Themes>();
 
     React.useEffect(() => {
         const {documentElement} = window.document;
-        if(!documentElement.getAttribute(DarkModeVariableName)) {
-            const prefersDarkMediaQuery = window.matchMedia('prefers-color-scheme: dark');
-            setColorMode(prefersDarkMediaQuery ? 'dark' : 'light');
+        const mode = documentElement.getAttribute(DarkModeVariableName);
+        if(Object.values(colorModes).includes(mode as Themes))
+            setRawDarkMode(mode as Themes);
+        else {
+            const prefersDarkMediaQuery = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            setColorMode(prefersDarkMediaQuery ? dark : light);
         }
     }, [])
 
-    function setColorMode(value: Themes = 'light') {
-        if(value !== 'light' && value !== 'dark')
+    function setColorMode(value: Themes = dark) {
+        if(!Object.values(colorModes).includes(value))
             return;
 
         const {documentElement} = window.document;
         setRawDarkMode(value);
         SetDarkModeCookie(value);
         // no react function owns this element, so this is fine
-        documentElement.setAttribute(`data-${DarkModeVariableName}`, value);
+        documentElement.setAttribute(DarkModeVariableName, value);
     }
 
     const ProviderValue = React.useMemo(() => {

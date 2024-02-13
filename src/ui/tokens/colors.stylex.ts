@@ -27,7 +27,7 @@ const colorTokens = {
         light: 'hsl(0,75%,42%)',
         dark: 'hsl(6,100%,84%)',
     }
-} as const
+}
 
 export const colors = stylex.defineVars<{
     [key: string]: {

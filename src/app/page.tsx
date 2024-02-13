@@ -1,9 +1,10 @@
 import * as stylex from "@stylexjs/stylex"
 import {PHONE} from "../ui/tokens/device.breakpoints.stylex"
+import MaxWidthWrapperStylex from "@/ui/utilityClasses/maxWidthWrapper";
 
 export default function Home() {
   return (
-    <main {...stylex.props(styles.base)}>
+    <main {...stylex.props(styles.base, MaxWidthWrapperStylex)}>
       <article>
         <h1>
           Placeholder

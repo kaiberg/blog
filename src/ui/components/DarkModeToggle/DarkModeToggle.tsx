@@ -2,6 +2,7 @@
 
 import {useHasMounted} from "@/hooks/useHasMounted";
 import {useDarkMode} from "@/hooks/useDarkMode";
+import {colorModes, Themes} from "@/ui/components/DarkModeProvider";
 
 function DarkModeToggle() {
     const mounted = useHasMounted()
@@ -14,9 +15,11 @@ function DarkModeToggle() {
     )
  }
 
+ const {light, dark} = colorModes
+
 function NotNull() {
-    const {value, setValue} = useDarkMode()
-    const opposite = value === 'light' ? 'dark' : 'light'
+    const {value, setValue} = useDarkMode();
+    const opposite : Themes = value === light ? dark : light
 
     return (
         <button onClick={() => {
