@@ -29,12 +29,13 @@ const colorTokens = {
     }
 }
 
-export const colors = stylex.defineVars<{
-    [key: string]: {
-        default: string
-        [DARK_QUERY]: string,
-    }
-}>({
+//     <{
+//         [key: string]: {
+// default: string
+//         [DARK_QUERY]: string,
+// }
+// }>
+export const colors = stylex.defineVars({
     background: {
         default: colorTokens.background.light,
         [DARK_QUERY]: colorTokens.background.dark,

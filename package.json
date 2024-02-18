@@ -11,6 +11,9 @@
   "dependencies": {
     "@stylexjs/stylex": "^0.5.1",
     "bright": "^0.8.4",
+    "framer-motion": "^11.0.5",
+    "immer": "^10.0.3",
+    "lodash": "^4.17.21",
     "next": "14.1.0",
     "next-mdx-remote": "^4.4.1",
     "react": "^18",
@@ -20,6 +23,7 @@
     "@stylexjs/babel-plugin": "^0.5.1",
     "@stylexjs/eslint-plugin": "^0.5.1",
     "@stylexjs/nextjs-plugin": "^0.5.1",
+    "@types/lodash": "^4.14.202",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
